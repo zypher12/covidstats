@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+   <title>Statistics</title>
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='style.css') }}" >
+</head>
+   <h2>{{ result['state'] }} statistics </h2>
+   <body>
+      <table>
+         <tr>
+            <th>District</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Deceased</th>
+         </tr>
+         {% for i in range(0,length) %}
+            <tr>
+               <td> {{ result['districtData'][i]['district'] }} </td>
+               <td> {{ result['districtData'][i]['active'] }} </td>
+               <td> {{ result['districtData'][i]['recovered'] }} </td>
+               <td> {{ result['districtData'][i]['deceased'] }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
